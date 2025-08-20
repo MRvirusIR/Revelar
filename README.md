@@ -116,6 +116,8 @@ results/example.com/
 ## 🔗 Links
 
 * Repository: [https://github.com/MRvirusIR/cdn-finder](https://github.com/MRvirusIR/cdn-finder)
+* Telegram: https://t.me/BugCod3
+* Telegram: https://t.me/Exploit_Forge
 * Go Documentation: [https://golang.org/doc/](https://golang.org/doc/)
 * License: MIT
 
