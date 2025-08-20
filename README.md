@@ -1,109 +1,141 @@
-# CDN-Finder
+CDN Finder – Origin Reveal PRO
 
-CDN-Finder is a Go-based tool to discover real/origin IPs of websites behind CDNs like Cloudflare, CloudFront, etc. It supports passive and active verification and generates results in JSON and HTML formats.
+   
 
----
+🔹 Overview
 
-## Features
+CDN Finder / Origin Reveal PRO is a powerful CLI tool designed to identify real IP addresses behind CDN-protected websites. It combines passive reconnaissance with optional active verification to generate detailed JSON and HTML reports.
 
-- Detect CDN provider and real IP candidates
-- Passive detection using DNS, MX records, and SSL SANs
-- Active verification via HTTP probes (requires authorization)
-- Subdomain enumeration with `subfinder` and `amass`
-- Supports multiple output formats (JSON & HTML)
-- Logs tool outputs separately
 
 ---
 
-## Installation
+⚙️ Features
 
-1. **Clone the repository:**
-```bash
+Collects current DNS records (A, AAAA, MX)
+
+Detects subdomains using crt.sh and optional external tools
+
+Filters out CDN IPs (Cloudflare, Fastly, Akamai, CloudFront, Imperva, etc.)
+
+Discovers real IP candidates using passive heuristics and active probing
+
+Active verification: compares status code, page title, server headers, and content SHA256
+
+Generates per-domain JSON + HTML reports for analysis or sharing
+
+Compatible with optional external tools: subfinder, amass, dnsx, httpx, nuclei
+
+
+
+---
+
+🛠 Prerequisites
+
+Go 1.21 or higher
+
+Internet connection for passive and active sources
+
+(Optional) External tools installed for enhanced subdomain enumeration
+
+
+
+---
+
+📥 Installation
+
+Install via go install:
+
+go install github.com/MRvirusIR/cdn-finder@latest
+
+> After installation, the binary cdn-finder will be available in $GOPATH/bin or $HOME/go/bin.
+
+
+
+Run directly from source:
+
 git clone https://github.com/MRvirusIR/cdn-finder.git
 cd cdn-finder
-```
-
-2. **Install dependencies/tools:**
-
-- **Go:** [Install guide](https://go.dev/doc/install)
-
-- **subfinder:**
-```bash
-go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
-```
-
-- **amass:**
-```bash
-sudo apt install amass
-# or via Go:
-go install -v github.com/owasp-amass/amass/v3/...@latest
-```
-
-- **dnsx:**
-```bash
-go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
-```
-
-- **httpx:**
-```bash
-go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
-```
-
-- **httpx-toolkit:** Optional alternative for HTTP probing
-
-- **nuclei:**
-```bash
-go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
-```
-
-⚠️ Make sure `$GOPATH/bin` is in your PATH to use installed tools globally.
-
----
-
-## Usage
-
-### Single Domain
-```bash
 go run ./script.go -d example.com
-```
 
-### Domain List
-```bash
-go run ./script.go -f domains.txt
-```
-
-### Active Verification (requires permission)
-```bash
-go run ./script.go -d example.com -active
-```
 
 ---
 
-## Outputs
+💻 Usage
 
-- **JSON:** `results/<domain>/results.json`
-- **HTML:** `results/<domain>/results.html`
-- **Tool logs:** `results/<domain>/<tool>.log`
+Passive Scan
+
+cdn-finder -d example.com
+
+Active Verification
+
+cdn-finder -d example.com -active
+
+Scan Multiple Domains
+
+cdn-finder -f domains.txt -active
+
+Important Flags
+
+Flag	Description
+
+-d	Single domain to scan (e.g., example.com)
+-f	File containing a list of domains (one per line)
+-timeout	Passive HTTP source timeout in seconds (default: 25)
+-active	Enable active verification against candidate IPs
+-active-timeout	Active HTTP probe timeout in seconds (default: 12)
+-ua	Custom User-Agent string for HTTP requests
+-scheme	Scheme for baseline/active fetch (http or https, default: https)
+-ports	Comma-separated ports for active probes (default: 80
+-no-tools	Disable external tool execution even if installed
+
+
 
 ---
 
-## Notes
+📂 Output
 
-- Verify you have permission before running active scans.
-- Passive detection is safe; active verification sends HTTP requests.
-- Real IP candidates are heuristically determined; always cross-check before use.
-- Subdomain enumeration depends on installed tools. 
+Each scanned domain creates a folder: results/<domain>/
+
+Reports are saved as:
+
+<domain>.json – structured JSON output
+
+<domain>.html – user-friendly HTML report
+
+
+
+Example
+
+results/example.com/
+  ├─ example.com.json
+  └─ example.com.html
+
 
 ---
 
-## Contributing
+⚖️ Legal Notice
 
-1. Fork the repo
-2. Create a new branch for your feature/fix
-3. Submit a pull request with detailed description
+Use this tool only on domains you are authorized to test.
+
+Always comply with local laws and ethical guidelines for cybersecurity testing.
+
+
 
 ---
 
-## License
+🔗 Links
 
-This project is licensed under MIT License.
+Repository: https://github.com/MRvirusIR/cdn-finder
+
+Go Documentation: https://golang.org/doc/
+
+License: MIT
+
+
+
+---
+
+🎬 Screenshots / Demo
+
+Coming soon: Add GIFs or screenshots to showcase reports and scans.
+
