@@ -974,8 +974,16 @@ func uniqInt(in []int) []int {
 	sort.Ints(out)
 	return out
 }
-
+const (
+	GREEN = "\033[32m" 
+	NC    = "\033[0m"  
+)
+// printBanner
+func printBanner() {
+	fmt.Printf("%s\n ____               ____          _ _____ \n| __ ) _   _  __ _ / ___|___   __| |___ / \n|  _ \\| | | |/ _` | |   / _ \\ / _` | |_ \\ \n| |_) | |_| | (_| | |__| (_) | (_| |___) |\n|____/ \\__,_|\\__,_|\\____\\___/ \\__,_|____/ \n             |___/    T.me/BugCod3        \n\n%s", GREEN, NC)
+}
 func main() {
+  printBanner()
 	single := flag.String("d", "", "Single domain to scan (e.g., example.com)")
 	list := flag.String("f", "", "Path to file with domains (one per line)")
 	timeout := flag.Int("timeout", 25, "Passive HTTP source timeout (seconds)")
@@ -990,8 +998,8 @@ func main() {
 
 	if *single == "" && *list == "" {
 		fmt.Println("Usage:")
-		fmt.Println("  origin_reveal_pro -d example.com [options]")
-		fmt.Println("  origin_reveal_pro -f domains.txt [options]")
+		fmt.Println("  cdn-finder -d example.com [options]")
+		fmt.Println("  cdn-finder -f domains.txt [options]")
 		fmt.Println("Options:")
 		fmt.Println("  -timeout N          Passive source timeout (default 25)")
 		fmt.Println("  -no-tools           Skip external tool calls")
@@ -1000,6 +1008,7 @@ func main() {
 		fmt.Println("  -ua STRING          HTTP User-Agent for active fetch")
 		fmt.Println("  -scheme http|https  Scheme for baseline/active (default https)")
 		fmt.Println("  -ports 80,443       Ports to try in active verify (default based on scheme)")
+    fmt.Println("Support: T.me/BugCod3")
 		return
 	}
 
