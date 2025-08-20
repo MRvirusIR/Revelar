@@ -1,15 +1,9 @@
-
-
 # CDN-Finder
 
-CDN-Finder is a Go-based tool to discover real/origin IPs of websites behind CDNs like Cloudflare, CloudFront, etc. It supports passive and active verification and generates results in JSON and HTML formats.
-
----
-
-## Features
-
-- Detect CDN provider and real IP candidates
-- Passive detection using DNS, MX records, and SSL SANs
+CDN-Finder is a Go-based tool to discover real/origin IPs of websites behind CDNs like Cloudflare, CloudFront, etc. It supports passive and active verification and generates results in JSON and HTML formats. 
+---                                                 
+## Features                                         
+- Detect CDN provider and real IP candidates        - Passive detection using DNS, MX records, and SSL SANs
 - Active verification via HTTP probes (requires authorization)
 - Subdomain enumeration with `subfinder` and `amass`
 - Supports multiple output formats (JSON & HTML)
@@ -27,7 +21,7 @@ cd cdn-finder
 
 2. **Install dependencies/tools:**
 
-- **Go:** Install guide: [https://go.dev/doc/install](https://go.dev/doc/install)
+- **Go:** [Install guide](https://go.dev/doc/install)
 
 - **subfinder:**
 ```bash
@@ -58,7 +52,7 @@ go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
 ```
 
-> Make sure `$GOPATH/bin` is in your PATH to use installed tools globally.
+⚠️ Make sure `$GOPATH/bin` is in your PATH to use installed tools globally.
 
 ---
 
@@ -83,9 +77,9 @@ go run ./script.go -d example.com -active
 
 ## Outputs
 
-- **JSON:** `results/<domain>/results.json`  
-- **HTML:** `results/<domain>/results.html`  
-- **Tool logs:** `results/<domain>/<tool>.log`  
+- **JSON:** `results/<domain>/results.json`
+- **HTML:** `results/<domain>/results.html`
+- **Tool logs:** `results/<domain>/<tool>.log`
 
 ---
 
@@ -94,20 +88,18 @@ go run ./script.go -d example.com -active
 - Verify you have permission before running active scans.
 - Passive detection is safe; active verification sends HTTP requests.
 - Real IP candidates are heuristically determined; always cross-check before use.
-- Subdomain enumeration depends on installed tools.
+- Subdomain enumeration depends on installed tools. 
 
 ---
 
 ## Contributing
 
-- Fork the repo
-- Create a new branch for your feature/fix
-- Submit a pull request with detailed description
+1. Fork the repo
+2. Create a new branch for your feature/fix
+3. Submit a pull request with detailed description
 
 ---
 
 ## License
 
-This project is licensed under **MIT License**
-```
-
+This project is licensed under MIT License.
