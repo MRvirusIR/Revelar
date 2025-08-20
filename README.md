@@ -1,5 +1,5 @@
 
-```markdown
+
 # CDN-Finder
 
 CDN-Finder is a Go-based tool to discover real/origin IPs of websites behind CDNs like Cloudflare, CloudFront, etc. It supports passive and active verification and generates results in JSON and HTML formats.
@@ -110,3 +110,4 @@ go run ./script.go -d example.com -active
 
 This project is licensed under **MIT License**
 ```
+
