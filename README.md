@@ -47,42 +47,42 @@ It combines **passive reconnaissance**, **heuristic analysis**, and optional **a
 
 ```bash
 go install github.com/MRvirusIR/cdn-finder@latest
-
+‍‍‍```
 Binary will be available at $GOPATH/bin/cdn-finder (or $HOME/go/bin/cdn-finder).
 
 Run from source:
-
+```bash
 git clone https://github.com/MRvirusIR/cdn-finder.git
 cd cdn-finder
 go run ./script.go -d example.com
-
+```
 
 ---
 
 💻 Usage
 
 Passive Scan
-
+```bash
 cdn-finder -d example.com
-
+```
 Active Verification (requires authorization)
-
+```bash
 cdn-finder -d example.com -active
-
+```
 Scan Multiple Domains
-
+```bash
 cdn-finder -f domains.txt -active
-
+```
 Selective Tool Control
 
 You can enable/disable external tools individually:
-
+```bash
 cdn-finder -d example.com -tools=subfinder,dnsx
-
+```
 Or disable all:
-
+```bash
 cdn-finder -d example.com -no-tools
-
+```
 
 ---
 
@@ -111,7 +111,7 @@ Reports are saved per-domain under results/<domain>/
 
 Files generated:
 
-
+```text
 results/example.com/
   ├─ results.json   # structured JSON
   ├─ results.html   # HTML report
@@ -119,7 +119,7 @@ results/example.com/
   ├─ amass.log
   ├─ dnsx.log
   └─ httpx.log
-
+```
 
 ---
 
