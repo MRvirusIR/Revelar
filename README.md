@@ -134,7 +134,7 @@ The authors assume no liability for misuse.
 
 Repository: https://github.com/MRvirusIR/cdn-finder
 
-Telegram: BugCod3 | Exploit Forge
+Telegram: [![Telegram](BugCod3)](https://t.me/BugCod3) | [![Telegram](Exploit_Forge)](https://t.me/Exploit_Forge)
 
 License: MIT
 
