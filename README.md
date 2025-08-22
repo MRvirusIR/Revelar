@@ -88,22 +88,18 @@ cdn-finder -d example.com -no-tools
 
 ---
 
-🧩 Flags
-
-Flag	Description
-
--d	Single domain to scan (e.g., example.com)
--f	File containing multiple domains
--timeout	Passive source timeout in seconds (default: 25)
--active	Enable active verification against candidate IPs
--active-timeout	Timeout for active probes (default: 12)
--ua	Custom HTTP User-Agent string
--scheme	http or https for active fetch (default: https)
--ports	Comma-separated ports for probing (default: 80,443)
--no-tools	Skip running external tools
--tools	Run only specific tools (comma-separated: subfinder,amass,dnsx,httpx)
-
-
+| Flag              | Description                                                           |
+| ----------------- | --------------------------------------------------------------------- |
+| `-d`              | Single domain to scan (e.g., example.com)                             |
+| `-f`              | File containing multiple domains                                      |
+| `-timeout`        | Passive source timeout in seconds (default: 25)                       |
+| `-active`         | Enable active verification against candidate IPs                      |
+| `-active-timeout` | Timeout for active probes (default: 12)                               |
+| `-ua`             | Custom HTTP User-Agent string                                         |
+| `-scheme`         | `http` or `https` for active fetch (default: https)                   |
+| `-ports`          | Comma-separated ports for probing (default: 80,443)                   |
+| `-no-tools`       | Skip running external tools                                           |
+| `-tools`          | Run only specific tools (comma-separated: subfinder,amass,dnsx,httpx) |
 
 ---
 
