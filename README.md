@@ -47,7 +47,7 @@ It combines **passive reconnaissance**, **heuristic analysis**, and optional **a
 
 ```bash
 go install github.com/MRvirusIR/cdn-finder@latest
-‍‍‍```
+```
 Binary will be available at $GOPATH/bin/cdn-finder (or $HOME/go/bin/cdn-finder).
 
 Run from source:
