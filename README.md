@@ -87,7 +87,7 @@ cdn-finder -d example.com -no-tools
 ```
 
 ---
-
+## 🧩 Flags
 | Flag              | Description                                                           |
 | ----------------- | --------------------------------------------------------------------- |
 | `-d`              | Single domain to scan (e.g., example.com)                             |
