@@ -61,7 +61,7 @@ cdn-finder -d example.com
 
 ---
 
-💻 Usage
+## 💻 Usage
 
 Passive Scan
 ```bash
@@ -103,7 +103,7 @@ cdn-finder -d example.com -no-tools
 
 ---
 
-📂 Output
+## 📂 Output
 
 Reports are saved per-domain under results/<domain>/
 
@@ -121,7 +121,7 @@ results/example.com/
 
 ---
 
-⚖️ Legal Notice
+## ⚖️ Legal Notice
 
 This tool is for authorized security testing only.
 Do NOT scan systems without explicit permission.
@@ -130,7 +130,7 @@ The authors assume no liability for misuse.
 
 ---
 
-🔗 Links
+## 🔗 Links
 
 Repository: https://github.com/MRvirusIR/cdn-finder
 
@@ -142,6 +142,6 @@ License: MIT
 
 ---
 
-🎬 Demo
+## 🎬 Demo
 
 Coming soon – screenshots and sample reports.
