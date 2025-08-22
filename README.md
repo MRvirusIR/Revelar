@@ -54,7 +54,9 @@ Run from source:
 ```bash
 git clone https://github.com/MRvirusIR/cdn-finder.git
 cd cdn-finder
-go run ./script.go -d example.com
+cdn-finder -d example.com
+# OR
+# go run ./script.go -d example.com
 ```
 
 ---
