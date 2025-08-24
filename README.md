@@ -145,5 +145,4 @@ License: MIT
 ## 🎬 Demo
 
 [![asciicast](https://asciinema.org/a/8NYbe08LbPzknFG7CZFwn7NP6.svg)](https://asciinema.org/a/8NYbe08LbPzknFG7CZFwn7NP6)
-<script src="https://asciinema.org/a/8NYbe08LbPzknFG7CZFwn7NP6.js" id="asciicast-8NYbe08LbPzknFG7CZFwn7NP6" async="true"></script>
-<a href="https://asciinema.org/a/8NYbe08LbPzknFG7CZFwn7NP6" target="_blank"><img src="https://asciinema.org/a/8NYbe08LbPzknFG7CZFwn7NP6.svg" /></a>
+
