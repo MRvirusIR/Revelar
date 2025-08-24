@@ -1,3 +1,3 @@
-module github.com/MRvirusIR/cdn-finder
+module github.com/MRvirusIR/Revelar
 
 go 1.21
