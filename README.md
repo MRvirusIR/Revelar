@@ -49,38 +49,38 @@ It combines **passive reconnaissance**, **heuristic analysis**, and optional **a
 
 ```bash
 go install github.com/MRvirusIR/revelar@latest
-
+```
 Binary will be available at $GOPATH/bin/revelar (or $HOME/go/bin/revelar).
 
 Run directly from source:
-
+```
 git clone https://github.com/MRvirusIR/revelar.git
 cd revelar
 revelar -d example.com
 # OR
 go run ./script.go -d example.com
-
+```
 
 ---
 
-💻 Usage
+## 💻 Usage
 
 Passive Scan
-
+```bash
 revelar -d example.com
-
+```
 Active Verification (requires authorization)
-
+```bash
 revelar -d example.com -active
-
+```
 Scan Multiple Domains
-
+```bash
 revelar -f domains.txt -active
-
+```
 Use Custom Wordlist
-
+```bash
 revelar -d example.com -w /path/to/wordlist.txt
-
+```
 > ⚠️ If -w is not provided, Revelar defaults to a standard wordlist from SecLists (if available).
 
 
@@ -88,43 +88,44 @@ revelar -d example.com -w /path/to/wordlist.txt
 Selective Tool Control
 
 Enable only specific tools:
-
+```bash
 revelar -d example.com -tools=subfinder,dnsx
-
+```
 Disable all external tools:
-
+```bash
 revelar -d example.com -tools=none
+```
+
+---
+
+## 🧩 Flags
+
+| Flag              | Description                                                           |
+| ----------------- | --------------------------------------------------------------------- |
+| `-d`              | Single domain to scan (e.g., example.com)                             |
+| `-f`              | File containing multiple domains                                      |
+| `-w`              | Path to custom wordlist (default: SecLists if available)              |
+| `-timeout`        | Passive source timeout in seconds (default: 25)                       |
+| `-active`         | Enable active verification against candidate IPs                      |
+| `-active-timeout` | Timeout for active probes (default: 12)                               |
+| `-ua`             | Custom HTTP User-Agent string                                         |
+| `-scheme`         | `http` or `https` for active fetch (default: https)                   |
+| `-ports`          | Comma-separated ports for probing (default: 80,443)                   |
+| `-tools`          | Run only specific tools (comma-separated: subfinder,amass,dnsx,httpx) |
+| `-no-tools`       | Skip running external tools                                           |
+| `-progress`       | Show/hide step-by-step progress logs (default: true)                  |
+
+
 
 
 ---
 
-🧩 Flags
-
-Flag	Description
-
--d	Single domain to scan (e.g., example.com)
--f	File containing multiple domains
--w	Path to custom wordlist (default: SecLists if available)
--timeout	Passive source timeout in seconds (default: 25)
--active	Enable active verification against candidate IPs
--active-timeout	Timeout for active probes (default: 12)
--ua	Custom HTTP User-Agent string
--scheme	http or https for active fetch (default: https)
--ports	Comma-separated ports for probing (default: 80,443)
--tools	Run only specific tools (comma-separated: subfinder,amass,dnsx,httpx)
--no-tools	Skip running external tools
--progress	Show/hide step-by-step progress logs (default: true)
-
-
-
----
-
-📂 Output
+## 📂 Output
 
 Reports are saved per-domain under results/<domain>/
 
 Example:
-
+```text
 results/example.com/
   ├─ results.json   # structured JSON
   ├─ results.html   # HTML report
@@ -132,11 +133,12 @@ results/example.com/
   ├─ amass.log
   ├─ dnsx.log
   └─ httpx.log
+```
 
 
 ---
 
-⚖️ Legal Notice
+## ⚖️ Legal Notice
 
 This tool is for authorized security testing only.
 Do NOT scan systems without explicit permission.
@@ -145,22 +147,22 @@ The authors assume no liability for misuse.
 
 ---
 
-🔗 Links
+## 🔗 Links
 
 Repository: https://github.com/MRvirusIR/revelar
 
-Telegram: BugCod3 | Exploit_Forge
+Telegram: [![BugCod3](BugCod3)](https://t.me/BugCod3) | [![Exploit_Forge](Exploit_Forge)](https://t.me/Exploit_Forge)
 
-Go Documentation: https://golang.org/doc/
-
-
+License: MIT
 
 ---
 
-🎬 Demo
+## 🎬 Demo
 
+[![asciicast](https://asciinema.org/a/8NYbe08LbPzknFG7CZFwn7NP6.svg)](https://asciinema.org/a/8NYbe08LbPzknFG7CZFwn7NP6)
 
+[![picture](https://mrvirusir.ir/Image/cdn-finder-01.png)]([https://asciinema.org/a/8NYbe08LbPzknFG7CZFwn7NP6](https://mrvirusir.ir/Image/cdn-finder-01.png))
 
- 
+[![picture](https://mrvirusir.ir/Image/cdn-finder-02.png)]([https://asciinema.org/a/8NYbe08LbPzknFG7CZFwn7NP6](https://mrvirusir.ir/Image/cdn-finder-02.png))
 
 ---
