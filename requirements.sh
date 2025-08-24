@@ -24,7 +24,14 @@ echo "[*] Installing nuclei-templates..."
 nuclei -update-templates
 
 echo "[*] Ensure your PATH includes $HOME/go/bin"
-echo 'export PATH=$PATH:$HOME/go/bin' >> ~/.bashrc
+echo 'export PATH=$PATH:$HOME/go/bin' >>~/.bashrc
 source ~/.bashrc
+
+echo "[*] Installing SecList..."
+wget https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/subdomains-top1million-110000.txt
+wget https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/subdomains-top1million-5000.txt
+wget https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/combined_subdomains.txt
+mkdir -p SecLists/Discovery/DNS
+mv subdomains-top1million-110000.txt subdomains-top1million-5000.txt combined_subdomains.txt SecLists/Discovery/DNS
 
 echo "[✓] All tools installed successfully!"
