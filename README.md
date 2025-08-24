@@ -9,7 +9,7 @@
 
 ## 🔹 Overview
 
-**CDN Finder / Origin Reveal PRO** is a professional Go-based CLI tool for uncovering **real/origin IP addresses of websites behind CDNs** such as Cloudflare, Akamai, Fastly, Imperva, and AWS CloudFront.  
+**CDN Finder / Origin Reveal PRO** is a professional Go-based CLI tool for uncovering **real/origin IP addresses of websites behind CDNs** such as Cloudflare, Akamai, Fastly, Imperva, and AWS CloudFront.
 
 It combines **passive reconnaissance**, **heuristic analysis**, and optional **active verification** to provide **comprehensive reports in JSON and HTML formats**.
 
@@ -117,7 +117,7 @@ results/example.com/
   ├─ amass.log
   ├─ dnsx.log
   └─ httpx.log
-```8NYbe08LbPzknFG7CZFwn7NP6
+```
 
 ---
 
