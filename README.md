@@ -146,3 +146,8 @@ License: MIT
 
 [![asciicast](https://asciinema.org/a/8NYbe08LbPzknFG7CZFwn7NP6.svg)](https://asciinema.org/a/8NYbe08LbPzknFG7CZFwn7NP6)
 
+
+[![picture](https://mrvirusir.ir/Image/cdn-finder-01.png)]([https://asciinema.org/a/8NYbe08LbPzknFG7CZFwn7NP6](https://mrvirusir.ir/Image/cdn-finder-01.png))
+
+[![picture](https://mrvirusir.ir/Image/cdn-finder-02.png)]([https://asciinema.org/a/8NYbe08LbPzknFG7CZFwn7NP6](https://mrvirusir.ir/Image/cdn-finder-02.png))
+
