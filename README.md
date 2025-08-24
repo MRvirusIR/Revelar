@@ -151,7 +151,7 @@ The authors assume no liability for misuse.
 
 Repository: https://github.com/MRvirusIR/Revelar
 
-[![Telegram](https://www.freepnglogos.com/uploads/telegram-logo-png-0.png)](#): [![BugCod3](BugCod3)](https://t.me/BugCod3) | [![Exploit_Forge](Exploit_Forge)](https://t.me/Exploit_Forge)
+<img src="https://www.freepnglogos.com/uploads/telegram-logo-png-0.png" width="400">Telegram: [![BugCod3](BugCod3)](https://t.me/BugCod3) | [![Exploit_Forge](Exploit_Forge)](https://t.me/Exploit_Forge)
 
 License: MIT
 
