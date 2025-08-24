@@ -3,7 +3,7 @@
 [![Go Version](https://img.shields.io/badge/go-1.21+-blue)](https://golang.org)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](#)
-[![GitHub stars](https://img.shields.io/github/stars/MRvirusIR/revelar?style=social)](https://github.com/MRvirusIR/revelar/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/MRvirusIR/Revelar?style=social)](https://github.com/MRvirusIR/Revelar/stargazers)
 
 ---
 
@@ -48,15 +48,15 @@ It combines **passive reconnaissance**, **heuristic analysis**, and optional **a
 ### Install via `go install`:
 
 ```bash
-go install github.com/MRvirusIR/revelar@latest
+go install github.com/MRvirusIR/Revelar@latest
 ```
-Binary will be available at $GOPATH/bin/revelar (or $HOME/go/bin/revelar).
+Binary will be available at $GOPATH/bin/Revelar (or $HOME/go/bin/Revelar).
 
 Run directly from source:
 ```
-git clone https://github.com/MRvirusIR/revelar.git
-cd revelar
-revelar -d example.com
+git clone https://github.com/MRvirusIR/Revelar.git
+cd Revelar
+Revelar -d example.com
 # OR
 go run ./script.go -d example.com
 ```
@@ -67,19 +67,19 @@ go run ./script.go -d example.com
 
 Passive Scan
 ```bash
-revelar -d example.com
+Revelar -d example.com
 ```
 Active Verification (requires authorization)
 ```bash
-revelar -d example.com -active
+Revelar -d example.com -active
 ```
 Scan Multiple Domains
 ```bash
-revelar -f domains.txt -active
+Revelar -f domains.txt -active
 ```
 Use Custom Wordlist
 ```bash
-revelar -d example.com -w /path/to/wordlist.txt
+Revelar -d example.com -w /path/to/wordlist.txt
 ```
 > ⚠️ If -w is not provided, Revelar defaults to a standard wordlist from SecLists (if available).
 
@@ -89,11 +89,11 @@ Selective Tool Control
 
 Enable only specific tools:
 ```bash
-revelar -d example.com -tools=subfinder,dnsx
+Revelar -d example.com -tools=subfinder,dnsx
 ```
 Disable all external tools:
 ```bash
-revelar -d example.com -tools=none
+Revelar -d example.com -tools=none
 ```
 
 ---
@@ -149,7 +149,7 @@ The authors assume no liability for misuse.
 
 ## 🔗 Links
 
-Repository: https://github.com/MRvirusIR/revelar
+Repository: https://github.com/MRvirusIR/Revelar
 
 [![Telegram](https://www.freepnglogos.com/uploads/telegram-logo-png-0.png)](#): [![BugCod3](BugCod3)](https://t.me/BugCod3) | [![Exploit_Forge](Exploit_Forge)](https://t.me/Exploit_Forge)
 
