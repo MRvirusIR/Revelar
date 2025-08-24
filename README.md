@@ -144,4 +144,4 @@ License: MIT
 
 ## 🎬 Demo
 
-Coming soon – screenshots and sample reports.
+[![asciicast](https://asciinema.org/a/8NYbe08LbPzknFG7CZFwn7NP6.svg)](https://asciinema.org/a/8NYbe08LbPzknFG7CZFwn7NP6)
