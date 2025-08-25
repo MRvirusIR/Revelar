@@ -1182,12 +1182,12 @@ func escapeCSV(s string) string {
 //
 
 const banner = `
-   ____ ____  _   _     _____ _           _           
-  / ___|  _ \| \ | |   |  ___(_)_ __   __| | ___ _ __ 
- | |   | | | |  \| |   | |_  | | '_ \ / _' |/ _ \ '__|
- | |___| |_| | |\  |   |  _| | | | | | (_| |  __/ |   
-  \____|____/|_| \_|   |_|   |_|_| |_|\__,_|\___|_|   
-                                                     
+             ____                _            
+            |  _ \ _____   _____| | ____ ____ 
+            | |_) / _ \ \ / / _ \ |/ _  |  __|
+            |  _ <  __/\ V /  __/ | (_| | |   
+            |_| \_\___| \_/ \___|_|\__,_|_|   
+
   T.me/BugCod3       CDN-FINDER      T.me/Exploit_Forge
 `
 
@@ -1253,8 +1253,8 @@ func main() {
 
 	if *single == "" && *list == "" {
 		fmt.Println("Usage:")
-		fmt.Println("  cdn-finder -d example.com [options]")
-		fmt.Println("  cdn-finder -f domains.txt [options]")
+		fmt.Println("  Revelar -d example.com [options]")
+		fmt.Println("  Revelar -f domains.txt [options]")
 		fmt.Println("\nOptions:")
 		fmt.Println("  -timeout N            Passive source timeout (default 25)")
 		fmt.Println("  -active               Enable active verification")
@@ -1271,9 +1271,9 @@ func main() {
 		fmt.Println("  -concurrency N        Parallel workers for -f (default #CPU)")
 		fmt.Println("  -progress=false       Disable stage progress logs")
 		fmt.Println("\nExamples:")
-		fmt.Println("  cdn-finder -d example.com -active -tools=all")
-		fmt.Println("  cdn-finder -d example.com -tools=subfinder,amass -progress=false")
-		fmt.Println("  cdn-finder -f domains.txt -tools=none -concurrency 6")
+		fmt.Println("  Revelar -d example.com -active -tools=all")
+		fmt.Println("  Revelar -d example.com -tools=subfinder,amass -progress=false")
+		fmt.Println("  Revelar -f domains.txt -tools=none -concurrency 6")
 		return
 	}
 
