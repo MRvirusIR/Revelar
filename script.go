@@ -222,11 +222,14 @@ var cdnCIDRs = []string{
 
 	// Imperva
 	"199.83.128.0/21", "198.143.32.0/19", "149.126.72.0/21", "103.28.248.0/22",
+
+  // ArvanCloud
+  "185.143.232.0/22", "185.143.236.0/22", "185.143.240.0/22", "185.143.244.0/22", "185.143.248.0/22", "185.143.252.0/22",
 }
 
 var cdnRDNSHints = []string{
 	"cloudflare", "cloudfront", "fastly", "akamai", "akamaiedge", "edgesuite", "imperva",
-	"incapsula", "stackpath", "cdn77", "cachefly",
+	"incapsula", "stackpath", "cdn77", "cachefly", "arvancloud",
 }
 
 func ipInCIDRs(ipStr string, cidrs []string) bool {
@@ -313,6 +316,8 @@ func detectCDNProvider(resolvedIPs, reversePTRs []string) string {
 				return "Amazon CloudFront"
 			case strings.Contains(lp, "imperva"), strings.Contains(lp, "incapsula"):
 				return "Imperva"
+      case strings.Contains(lp, "arvancloud"):
+				return "ArvanCloud"
 			}
 		}
 	}
