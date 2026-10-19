@@ -7,7 +7,7 @@
   <a href="https://golang.org/"><img src="https://img.shields.io/badge/Go-1.21%2B-00ADD8?logo=go&logoColor=white"></a>
   <img src="https://img.shields.io/badge/license-MIT-blue">
   <img src="https://img.shields.io/badge/platform-linux%20%7C%20macos%20%7C%20windows-informational">
-  <a href="https://t.me/RootAccessClub"><img src="https://img.shields.io/badge/Telegram-RootAccessClub-2CA5E0?logo=telegram&logoColor=white"></a>
+  <a href="https://t.me/BugCod3"><img src="https://img.shields.io/badge/Telegram-BugCod3-2CA5E0?logo=telegram&logoColor=white"></a>
 </p>
 
 # Revelar — Origin Reveal PRO (v2)
