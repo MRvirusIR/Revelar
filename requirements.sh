@@ -1,37 +1,21 @@
-#!/bin/bash
-# This script installs all external tools required by the CDN-finder Go script
-# Make sure you have Go installed and $GOPATH/bin is in your PATH
+#!/usr/bin/env bash
+# Optional helpers. Revelar works fully without any of these; install them for extra
+# coverage with:  Revelar -tools -brute -w SecLists/Discovery/DNS/subdomains-top1million-5000.txt
+set -euo pipefail
 
-set -e
+command -v go >/dev/null || { echo "[x] Go is required: https://go.dev/dl/"; exit 1; }
 
-echo "[*] Installing subfinder..."
-GO111MODULE=on go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+echo "[*] Installing subfinder (optional) ..."
+go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest || echo "[!] subfinder failed (optional)"
 
-echo "[*] Installing amass..."
-sudo apt-get update
-sudo apt-get install -y amass
+echo "[*] Installing amass (optional) ..."
+go install -v github.com/owasp-amass/amass/v4/...@master || echo "[!] amass failed (optional)"
 
-echo "[*] Installing dnsx..."
-GO111MODULE=on go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
-
-echo "[*] Installing httpx..."
-GO111MODULE=on go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
-
-echo "[*] Installing nuclei..."
-GO111MODULE=on go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
-
-echo "[*] Installing nuclei-templates..."
-nuclei -update-templates
-
-echo "[*] Ensure your PATH includes $HOME/go/bin"
-echo 'export PATH=$PATH:$HOME/go/bin' >>~/.bashrc
-source ~/.bashrc
-
-echo "[*] Installing SecList..."
-wget https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/subdomains-top1million-110000.txt
-wget https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/subdomains-top1million-5000.txt
-wget https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/combined_subdomains.txt
+echo "[*] Downloading SecLists DNS wordlists (optional) ..."
 mkdir -p SecLists/Discovery/DNS
-mv subdomains-top1million-110000.txt subdomains-top1million-5000.txt combined_subdomains.txt SecLists/Discovery/DNS
+base="https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS"
+for f in subdomains-top1million-5000.txt subdomains-top1million-110000.txt; do
+  curl -fsSL "$base/$f" -o "SecLists/Discovery/DNS/$f" || echo "[!] could not fetch $f"
+done
 
-echo "[✓] All tools installed successfully!"
+echo "[+] Done. Ensure \$(go env GOPATH)/bin is on your PATH."

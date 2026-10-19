@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0b1020"/><stop offset="1" stop-color="#131c33"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="120" y1="120" x2="300" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22d3ee"/><stop offset="1" stop-color="#2ee6a6"/>
+    </linearGradient>
+    <linearGradient id="txt" x1="360" y1="140" x2="900" y2="260" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e7ecff"/><stop offset="1" stop-color="#9fc0ff"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="400" rx="36" fill="url(#bg)"/>
+  <rect x="2" y="2" width="1196" height="396" rx="34" fill="none" stroke="#28355a" stroke-width="2"/>
+
+  <!-- Emblem: a shield (CDN) with an eye revealing the hidden origin node -->
+  <g transform="translate(210,200)" filter="url(#glow)">
+    <!-- shield outline -->
+    <path d="M0,-118 C40,-96 78,-86 112,-86 C112,-20 96,64 0,120 C-96,64 -112,-20 -112,-86 C-78,-86 -40,-96 0,-118 Z"
+          fill="none" stroke="url(#accent)" stroke-width="9" stroke-linejoin="round" opacity="0.9"/>
+    <!-- dashed orbit = proxy layer -->
+    <circle cx="0" cy="-6" r="66" fill="none" stroke="#22d3ee" stroke-width="4" stroke-dasharray="10 12" opacity="0.6"/>
+    <!-- eye -->
+    <path d="M-62,-6 C-34,-44 34,-44 62,-6 C34,32 -34,32 -62,-6 Z" fill="none" stroke="url(#accent)" stroke-width="8" stroke-linejoin="round"/>
+    <!-- revealed origin node (pupil) -->
+    <circle cx="0" cy="-6" r="20" fill="url(#accent)"/>
+    <circle cx="0" cy="-6" r="20" fill="none" stroke="#0b1020" stroke-width="3"/>
+    <!-- tiny target ticks -->
+    <g stroke="#2ee6a6" stroke-width="5" stroke-linecap="round">
+      <line x1="0" y1="-44" x2="0" y2="-34"/>
+      <line x1="0" y1="22" x2="0" y2="32"/>
+      <line x1="-38" y1="-6" x2="-28" y2="-6"/>
+      <line x1="28" y1="-6" x2="38" y2="-6"/>
+    </g>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="370" y="214" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="128" font-weight="800" fill="url(#txt)" letter-spacing="2">Revelar</text>
+  <text x="374" y="272" font-family="Consolas, 'Courier New', monospace" font-size="34" font-weight="600" fill="#22d3ee" letter-spacing="7">ORIGIN&#160;REVEAL&#160;PRO</text>
+  <text x="376" y="316" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#93a0c4">unmask the real IP behind any CDN · WAF</text>
+</svg>
