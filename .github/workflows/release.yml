@@ -1,8 +1,14 @@
 name: Release
 
+# Fires when VERSION changes on master (or a v* tag is pushed, or manually).
+# It builds cross-platform binaries, creates the matching git tag if needed,
+# and publishes a GitHub release with the artifacts and checksums.
 on:
   push:
+    branches: [ "master" ]
+    paths: [ "VERSION" ]
     tags: [ "v*" ]
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -12,9 +18,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-go@v5
         with:
           go-version: '1.22'
+
+      - name: Resolve version
+        id: ver
+        run: |
+          if [ "${GITHUB_REF_TYPE}" = "tag" ]; then
+            echo "tag=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag=v$(tr -d ' \n\r\t' < VERSION)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build and test
+        run: |
+          go vet ./...
+          go test ./...
+
       - name: Cross-compile
         run: |
           mkdir -p dist
@@ -24,8 +46,11 @@ jobs:
               -ldflags="-s -w" -o "dist/Revelar_${os}_${arch}${ext}" .
           done
           cd dist && sha256sum * > checksums.txt
+
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ steps.ver.outputs.tag }}
+          name: ${{ steps.ver.outputs.tag }}
           files: dist/*
           generate_release_notes: true
