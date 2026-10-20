@@ -10,7 +10,7 @@ import (
 	"strings"
 )
 
-const version = "2.0.0"
+const version = "2.1.0"
 
 const (
 	cReset = "\033[0m"
