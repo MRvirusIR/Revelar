@@ -1,5 +1,18 @@
 # Changelog
 
+## v2.1.0
+
+### Added
+- Expanded CDN/WAF detection from 20 to **42 providers**, including Alibaba Cloud
+  CDN, Tencent Cloud EdgeOne, Baidu, Huawei, Wangsu/ChinaNetCenter, ChinaCache,
+  UCloud, CDNetworks, Google Cloud CDN, Microsoft Azure, Qrator, Reblaze,
+  PerimeterX, Oracle Dyn/Zenedge, Medianova, Azion, Section, Fasterize, Leaseweb,
+  Edgio/Verizon and more — via built-in IP ranges plus reverse-DNS/CNAME and
+  HTTP header signatures.
+- New built-in IP ranges for 15 additional providers.
+- README: provider table, redesigned hero/terminal/pipeline banners and Telegram
+  join cards.
+
 ## v2.0.0
 
 A full modular rewrite focused on finding the real origin IP behind CDNs/WAFs.

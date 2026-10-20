@@ -12,6 +12,10 @@ func TestLookup(t *testing.T) {
 		"151.101.1.69":    "Fastly",
 		"2606:4700::1111": "Cloudflare",
 		"185.143.233.5":   "ArvanCloud",
+		"89.187.160.5":    "BunnyCDN",
+		"43.152.0.5":      "Tencent Cloud EdgeOne",
+		"47.88.0.5":       "Alibaba Cloud CDN",
+		"180.76.0.5":      "Baidu Cloud CDN",
 		"8.8.8.8":         "",
 	}
 	for ip, want := range cases {
@@ -40,5 +44,11 @@ func TestByHostname(t *testing.T) {
 	}
 	if ByHostname("mail.example.com") != "" {
 		t.Fatal("false positive")
+	}
+	if ByHostname("foo.alikunlun.com") != "Alibaba Cloud CDN" {
+		t.Fatal("alibaba")
+	}
+	if ByHostname("x.cdntip.com") != "Tencent Cloud EdgeOne" {
+		t.Fatal("tencent")
 	}
 }

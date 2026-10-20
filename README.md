@@ -48,7 +48,7 @@
 ## ✨ What's new in v2
 
 - **Modular architecture** — small, tested Go packages instead of one 1,400-line file.
-- **Live CDN ranges** — Cloudflare / Fastly / CloudFront ranges pulled from their official feeds (cached 24h) and merged with a built-in list covering 15+ providers.
+- **Live CDN ranges** — Cloudflare / Fastly / CloudFront ranges pulled from their official feeds (cached 24h) and merged with a built-in list covering **40+ CDN / WAF providers** worldwide (incl. Alibaba, Tencent EdgeOne, Baidu, Huawei, Wangsu, Gcore, Qrator and more).
 - **18 passive sources** — crt.sh, CertSpotter, HackerTarget, AlienVault OTX, urlscan.io, Anubis, Wayback, RapidDNS, plus keyed SecurityTrails, Shodan, Censys, VirusTotal, ViewDNS, Netlas, FOFA, ZoomEye, BinaryEdge and Quake (keyed sources auto-enable when their env var is set).
 - **Smarter detection** — CDN identified via IP ranges, reverse DNS, CNAME chains **and** HTTP response headers.
 - **Real active verification** — builds a baseline fingerprint of the true site (status, title, body SHA-256, **SimHash** content similarity, TLS cert SANs) and scores every candidate 0–100.
@@ -155,6 +155,24 @@ No single trick finds an origin — Revelar stacks signals and **confirms** the 
 | 🎯 Active | **Title · status · server** | Corroborating response signals |
 
 Everything the CDN owns is dropped first; only **public non-CDN** candidates are probed, each enriched with ASN/org and scored `0–100`.
+
+<details>
+<summary><b>🌐 40+ CDN / WAF providers recognised</b> (click to expand)</summary>
+
+<br>
+
+**Western / global**
+Cloudflare · Amazon CloudFront · Akamai · Fastly · Google Cloud CDN · Microsoft Azure · Azure CDN · Azure Front Door · Edgio (Limelight/Verizon) · Verizon/Edgecast · StackPath · Highwinds · CDN77 · CacheFly · KeyCDN · BunnyCDN · Netlify · Vercel · Section · Fasterize · Leaseweb CDN · CDNetworks
+
+**WAF / anti-DDoS**
+Imperva (Incapsula) · Sucuri · DDoS-Guard · Qrator · Reblaze · PerimeterX · Oracle Dyn/Zenedge
+
+**Regional / Asia**
+Alibaba Cloud CDN · Tencent Cloud EdgeOne · Baidu Cloud CDN · Huawei Cloud CDN · Wangsu / ChinaNetCenter · ChinaCache · UCloud CDN · Gcore · Medianova · Azion · Derak Cloud · ArvanCloud · ClouDNS
+
+<sub>Detection combines live + built-in IP ranges, reverse-DNS/CNAME hints and HTTP response-header signatures — so a provider is caught even when only one of those signals is present.</sub>
+
+</details>
 
 ---
 
