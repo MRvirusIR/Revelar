@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="200" viewBox="0 0 1200 200" role="img" aria-label="Revelar pipeline">
+<defs>
+  <marker id="a" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#19E6E6"/></marker>
+  <linearGradient id="n" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c181a"/><stop offset="1" stop-color="#081012"/></linearGradient>
+  <style>.t{font-family:'Segoe UI',system-ui,sans-serif}.s{font-family:'JetBrains Mono',monospace}@keyframes fl{to{stroke-dashoffset:-24}}.flow{stroke-dasharray:6 6;animation:fl 1s linear infinite}</style>
+</defs>
+<rect width="1200" height="200" fill="#05080b"/>
+<rect x="24" y="50" width="170" height="100" rx="12" fill="url(#n)" stroke="#19E6E6" stroke-opacity=".5"/>
+<text class="s" x="40" y="80" font-size="20" fill="#19E6E6">①</text>
+<text class="t" x="68" y="80" font-size="16" font-weight="700" fill="#eafffb">FRONT-DOOR</text>
+<text class="s" x="40" y="106" font-size="12.5" fill="#7f9c97">resolve apex</text>
+<text class="s" x="40" y="126" font-size="12.5" fill="#7f9c97">detect CDN/WAF</text>
+<line class="flow" x1="196" y1="100.0" x2="216" y2="100.0" stroke="#19E6E6" stroke-width="2" marker-end="url(#a)"/>
+<rect x="218" y="50" width="170" height="100" rx="12" fill="url(#n)" stroke="#19E6E6" stroke-opacity=".5"/>
+<text class="s" x="234" y="80" font-size="20" fill="#19E6E6">②</text>
+<text class="t" x="262" y="80" font-size="16" font-weight="700" fill="#eafffb">PASSIVE</text>
+<text class="s" x="234" y="106" font-size="12.5" fill="#7f9c97">18 sources · CT</text>
+<text class="s" x="234" y="126" font-size="12.5" fill="#7f9c97">passive DNS · SPF</text>
+<line class="flow" x1="390" y1="100.0" x2="410" y2="100.0" stroke="#19E6E6" stroke-width="2" marker-end="url(#a)"/>
+<rect x="412" y="50" width="170" height="100" rx="12" fill="url(#n)" stroke="#19E6E6" stroke-opacity=".5"/>
+<text class="s" x="428" y="80" font-size="20" fill="#19E6E6">③</text>
+<text class="t" x="456" y="80" font-size="16" font-weight="700" fill="#eafffb">FILTER</text>
+<text class="s" x="428" y="106" font-size="12.5" fill="#7f9c97">drop CDN IPs</text>
+<text class="s" x="428" y="126" font-size="12.5" fill="#7f9c97">ASN enrich</text>
+<line class="flow" x1="584" y1="100.0" x2="604" y2="100.0" stroke="#19E6E6" stroke-width="2" marker-end="url(#a)"/>
+<rect x="606" y="50" width="170" height="100" rx="12" fill="url(#n)" stroke="#19E6E6" stroke-opacity=".5"/>
+<text class="s" x="622" y="80" font-size="20" fill="#19E6E6">④</text>
+<text class="t" x="650" y="80" font-size="16" font-weight="700" fill="#eafffb">ACTIVE</text>
+<text class="s" x="622" y="106" font-size="12.5" fill="#7f9c97">fingerprint + score</text>
+<text class="s" x="622" y="126" font-size="12.5" fill="#7f9c97">TLS-cert pivot</text>
+<line class="flow" x1="778" y1="100.0" x2="798" y2="100.0" stroke="#19E6E6" stroke-width="2" marker-end="url(#a)"/>
+<rect x="800" y="50" width="170" height="100" rx="12" fill="url(#n)" stroke="#19E6E6" stroke-opacity=".5"/>
+<text class="s" x="816" y="80" font-size="20" fill="#19E6E6">⑤</text>
+<text class="t" x="844" y="80" font-size="16" font-weight="700" fill="#eafffb">DEEP</text>
+<text class="s" x="816" y="106" font-size="12.5" fill="#7f9c97">sweep SPF/ASN</text>
+<text class="s" x="816" y="126" font-size="12.5" fill="#7f9c97">ranges</text>
+<line class="flow" x1="972" y1="100.0" x2="992" y2="100.0" stroke="#19E6E6" stroke-width="2" marker-end="url(#a)"/>
+<rect x="994" y="50" width="170" height="100" rx="12" fill="url(#n)" stroke="#19E6E6" stroke-opacity=".5"/>
+<text class="s" x="1010" y="80" font-size="20" fill="#19E6E6">⑥</text>
+<text class="t" x="1038" y="80" font-size="16" font-weight="700" fill="#eafffb">REPORT</text>
+<text class="s" x="1010" y="106" font-size="12.5" fill="#7f9c97">JSON · HTML</text>
+<text class="s" x="1010" y="126" font-size="12.5" fill="#7f9c97">CSV</text>
+</svg>

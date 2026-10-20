@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" role="img" aria-label="Revelar terminal demo">
+<defs>
+  <linearGradient id="win" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1013"/><stop offset="1" stop-color="#070b0d"/></linearGradient>
+  <style>
+    .m{font-family:'JetBrains Mono','SFMono-Regular',Consolas,monospace;font-size:15.5px}
+    @keyframes cur{50%{opacity:0}} .cur{animation:cur 1.1s step-end infinite}
+    @keyframes typ{0%{opacity:.35}100%{opacity:1}}
+    .l{opacity:1}
+    .l1{animation:typ 9s linear infinite}.l2{animation:typ 9s linear .4s infinite}.l3{animation:typ 9s linear .8s infinite}
+    .l4{animation:typ 9s linear 1.2s infinite}.l5{animation:typ 9s linear 1.6s infinite}.l6{animation:typ 9s linear 2.0s infinite}
+    .l7{animation:typ 9s linear 2.4s infinite}.l8{animation:typ 9s linear 2.8s infinite}.l9{animation:typ 9s linear 3.2s infinite}
+    .l10{animation:typ 9s linear 3.6s infinite}.l11{animation:typ 9s linear 4.0s infinite}
+  </style>
+</defs>
+<rect width="900" height="560" rx="14" fill="url(#win)" stroke="#16302e" stroke-width="1.5"/>
+<rect width="900" height="40" rx="14" fill="#0e1619"/>
+<rect y="26" width="900" height="14" fill="#0e1619"/>
+<circle cx="24" cy="20" r="6" fill="#ff5f56"/><circle cx="46" cy="20" r="6" fill="#ffbd2e"/><circle cx="68" cy="20" r="6" fill="#27c93f"/>
+<text class="m" x="450" y="25" fill="#5c6f6c" text-anchor="middle">revelar — origin reveal</text>
+<g class="m" transform="translate(22 72)">
+  <text class="l l1" fill="#7fe3d6">$ <tspan fill="#eafffb">revelar -d target.com -active -deep</tspan></text>
+  <text class="l l2" y="30" fill="#5c6f6c">[*] front-door: resolving apex &amp; detecting edge…</text>
+  <text class="l l3" y="54" fill="#e6c84d">[cdn] Cloudflare detected  (IP range + CNAME + server header)</text>
+  <text class="l l4" y="84" fill="#5c6f6c">[*] passive expansion across 18 sources…</text>
+  <text class="l l5" y="108" fill="#7fe3d6">[+] 42 subdomains · 1,907 historical IPs · favicon mmh3 -1782… </text>
+  <text class="l l6" y="138" fill="#5c6f6c">[*] filtering candidates (dropping CDN-owned)…</text>
+  <text class="l l7" y="162" fill="#7fe3d6">[+] 18 public non-CDN candidates kept · ASN-enriched</text>
+  <text class="l l8" y="192" fill="#5c6f6c">[*] active verification — baseline fingerprint + TLS pivot…</text>
+  <text class="l l9" y="222" fill="#4DFF9E">[✓] 203.0.113.47   score 92/100   TLS-SAN ✓  body ✓  title ✓</text>
+  <text class="l l10" y="246" fill="#7fe3d6">    └ AS14061 DigitalOcean · :443 :8443 open · SimHash 0.97</text>
+  <text class="l l11" y="282" fill="#4DFF9E" font-weight="700">ORIGIN LOCKED → 203.0.113.47  <tspan class="cur" fill="#19E6E6">█</tspan></text>
+</g>
+</svg>
